@@ -39,7 +39,9 @@ public class HomePage extends BasePage {
         addToCartButton.click();
     }
 
-    public void goToCart() {
+    public void goToCart() throws InterruptedException {
+
+        Thread.sleep(3000);
         topCartButton.click();
     }
 }
