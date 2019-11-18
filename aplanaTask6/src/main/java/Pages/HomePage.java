@@ -3,6 +3,7 @@ package Pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class HomePage extends BasePage {
     @FindBy(id = "aa-search-input")
@@ -28,6 +29,7 @@ public class HomePage extends BasePage {
     }
 
     public void selectMacBook() {
+        wait.until(ExpectedConditions.visibilityOf(selectedNoteBook));
         selectedNoteBook.click();
     }
 
@@ -36,6 +38,7 @@ public class HomePage extends BasePage {
     }
 
     public void addToCart() {
+        wait.until(ExpectedConditions.visibilityOf(addToCartButton));
         addToCartButton.click();
     }
 
