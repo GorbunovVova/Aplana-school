@@ -13,6 +13,7 @@ public class ComputerUniverseTest extends BaseTest {
         homePage.search("macbook pro");
         homePage.selectMacBook();
         double price = homePage.getPrice();
+        System.out.println(price);
         homePage.addToCart();
         homePage.goToCart();
         CartPage cartPage = new CartPage(driver);
