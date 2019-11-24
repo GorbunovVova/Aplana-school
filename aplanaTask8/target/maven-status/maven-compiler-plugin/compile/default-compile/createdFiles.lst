@@ -1,6 +1,0 @@
-ru\sberbank\autotests\pages\MainPage.class
-ru\sberbank\autotests\pages\BasePage.class
-ru\sberbank\autotests\pages\dataEntryPage.class
-ru\sberbank\autotests\steps\BaseSteps.class
-ru\sberbank\autotests\util\TestProperties.class
-ru\sberbank\autotests\util\AllureReporter.class

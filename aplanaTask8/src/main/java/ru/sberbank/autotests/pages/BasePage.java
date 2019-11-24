@@ -5,28 +5,22 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import ru.sberbank.autotests.steps.BaseSteps;
 
 public class BasePage {
 
-    WebDriver driver;
     Wait<WebDriver> wait;
 
-    BasePage(WebDriver driver) {
+    BasePage() {
+        WebDriver driver = BaseSteps.getDriver();
         PageFactory.initElements(driver, this);
-        this.driver = driver;
         wait = new WebDriverWait(driver, 5, 1000);
     }
 
-    void fillField(WebElement webElement, String value) {
+    void fillField(WebElement webElement, String value) throws InterruptedException {
         webElement.clear();
+        Thread.sleep(1000);
         webElement.sendKeys(value);
-    }
-
-    double parsePrice(WebElement price) {
-        return Double.parseDouble(price.getText()
-                .replaceAll(" ", "")
-                .replaceAll("₽", "")
-                .replaceAll("%", "")
-                .trim());
+        Thread.sleep(1000);
     }
 }
